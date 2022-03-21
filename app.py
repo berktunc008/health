@@ -133,8 +133,8 @@ def home():
     else:
         result='İYİ HUYLU NODÜL-KANSER HÜCRESİ SAPTANMAMIŞTIR.'
     
-    ths=open('C:\\Users\\Berk\\Desktop\\health\\logs.txt',"w")
-    ths.write(str(datax))
+    #ths=open('C:\\Users\\Berk\\Desktop\\health\\logs.txt',"w")
+    #ths.write(str(datax))
 
     return render_template('webform.html',value=result)
 	
