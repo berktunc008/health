@@ -1,0 +1,4 @@
+   radius_mean texture_mean  ... symmetry_mean fractal_dimension_mean
+10       19.69        21.25  ...       0.05999                 0.7456
+
+[1 rows x 10 columns]
