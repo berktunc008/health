@@ -30,11 +30,11 @@ from pickle import load
 
 app=Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=['POST','GET'])
 def index():
     return render_template("home.html")
-   
-@app.route("/BreastCancer")
+
+@app.route("/BreastCancer", methods=['POST','GET'])
 def home():
     return render_template("breast_cancer.html")
 
