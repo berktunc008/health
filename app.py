@@ -30,13 +30,13 @@ from pickle import load
 
 app=Flask(__name__)
 
-@app.route("/", methods=['POST','GET'])
+@app.route("/")
 def index():
-    return render_template("home.html")
+    return render_template("breastcancer.html")
 
-@app.route("/BreastCancer", methods=['POST','GET'])
+@app.route("/home")
 def home():
-    return render_template("breast_cancer.html")
+    return render_template("home.html")
 
 @app.route('/', methods=['POST','GET'])
 def breastcancer():
@@ -112,7 +112,7 @@ def breastcancer():
     #ths=open('C:\\Users\\Berk\\Desktop\\health\\logs.txt',"w")
     #ths.write(str(datax))
 
-    return render_template('breast_cancer.html',value=result)
+    return render_template('breastcancer.html',value=result)
 	
 
 
