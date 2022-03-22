@@ -1,3 +1,4 @@
+from fileinput import filename
 from flask import Flask, request, render_template, url_for,request
 import pickle,time,os,io,re
 import pandas as pd
@@ -34,7 +35,7 @@ app=Flask(__name__)
 def index():
     return render_template("breastcancer.html")
 
-@app.route("/home")
+@app.route("/home" , methods=['GET'])
 def home():
     return render_template("home.html")
 
@@ -104,15 +105,18 @@ def breastcancer():
     #Modelin kullanılması ile formdan gelen veriler üzerinde tahmin yapılıyor.
     predictedx=model_breastcancer.predict(datax_std)
     result=''
+    filenames=['']
     if predictedx==[1]:
-        result='KÖTÜ HUYLU KANSER HÜCRESİ-KANSER HÜCRESİ SAPTANMIŞTIR' 
+        result='KÖTÜ HUYLU KANSER HÜCRESİ-KANSER HÜCRESİ SAPTANMIŞTIR'
+        filenames=['sad_doctor.jpg']
     elif predictedx==[0]:
         result='İYİ HUYLU NODÜL-KANSER HÜCRESİ SAPTANMAMIŞTIR.'
-    
+        filenames=['happy_doctor.jpg']
+
     #ths=open('C:\\Users\\Berk\\Desktop\\health\\logs.txt',"w")
     #ths.write(str(datax))
 
-    return render_template('breastcancer.html',value=result)
+    return render_template('breastcancer.html',value=result, filenames=filenames)
 	
 
 
