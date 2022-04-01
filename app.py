@@ -33,13 +33,17 @@ app=Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("breastcancer.html")
+    return render_template("home.html")
 
 @app.route("/home" , methods=['GET'])
 def home():
     return render_template("home.html")
 
-@app.route('/', methods=['POST','GET'])
+@app.route("/breast")
+def breast():
+    return render_template("breastcancer.html")
+
+@app.route('/breast', methods=['POST','GET'])
 def breastcancer():
     #Model load edildi.
     model_breastcancer = load(open("models/model_breastcancer/SVCmodelVS.pkl", 'rb'))
