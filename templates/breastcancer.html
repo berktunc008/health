@@ -57,9 +57,11 @@
     <h1><b> Result: </b> {{ value }} </h1>
 </form> -->
 
+
+<!--Navigasyon Cubugu-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <img src="/static/sayfa_logo.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      <img src="/static/sayfaLogosu.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
       <a class="navbar-brand" href="http://127.0.0.1:5000/home">Sağlıklı Tahmin</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -70,21 +72,27 @@
             <a class="nav-link active" aria-current="page" href="">Hakkımızda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/breast">Göğüs Kanseri Testi</a>
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/breast">Göğüs Kanseri Tahmini</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Kalp Krizi Riski Testi</a>
+            <a class="nav-link active" aria-current="page" href="">Kalp Krizi Riski Tahmini</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Test3</a>
+            <a class="nav-link active" aria-current="page" href="">Test3 Tahmini</a>
           </li>
         </ul>
-        
+      
       </div>
     </div>
   </nav>
 
-<form method="POST" style="padding: 10px;" >
+    <!--col-6 bölümleme-->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        1 of 2
+      
+<form method="POST">
     <br>
     <div class="mb-3">
         <label for="radius_mean">Yarıçap Ortalaması</label> </br>
@@ -127,7 +135,7 @@
         <input type="number" step="0.0000001" id="fractal_dimension_mean" name="fractal_dimension_mean">
 </div>
     
-       
+
     <input type="submit">
 
     <h1><b> Sonuç: </b> {{ value }} </h1>
@@ -136,7 +144,19 @@
   {% for name in filenames %}
     <img src="/static/{{ name }}", width="250">
    {% endfor %}
-  
+</div>
+
+<div class="col">
+    2 of 2
+    <h1>Buraya bilgiler gelecek</h1>
+  </div>
+</div>
+<!--footer-->
+<div class="container">
+    <footer class="pt-5 my-5 text-muted border-top">
+      Sağlıklı Tahmin · Rıfat İlhan · Berk Tunç · © 2022
+    </footer>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
