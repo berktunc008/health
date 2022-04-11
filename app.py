@@ -43,6 +43,10 @@ def home():
 def breast():
     return render_template("breastcancer.html")
 
+@app.route("/heart")
+def heart():
+    return render_template("heartattack.html")
+
 @app.route('/breast', methods=['POST','GET'])
 def breastcancer():
     #Model load edildi.
