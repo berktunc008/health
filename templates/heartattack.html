@@ -39,65 +39,299 @@
     </div>
   </nav>
 
+  <!-- datax.loc[["X"], "BMI"]=20
+  datax.loc[["X"], "Smoking"]=1
+  datax.loc[["X"], "AlcoholDrinking"]=1
+  datax.loc[["X"], "Stroke"]=0
+  datax.loc[["X"], "PhysicalHealth"]=30.0
+  datax.loc[["X"], "MentalHealth"]=30.0
+  datax.loc[["X"], "DiffWalking"]=0
+  datax.loc[["X"], "Sex"]=1
+  datax.loc[["X"], "AgeCategory"]=3
+  datax.loc[["X"], "Race"]=1
+  datax.loc[["X"], "Diabetic"]=1
+  datax.loc[["X"], "PhysicalActivity"]=1
+  datax.loc[["X"], "GenHealth"]=0
+  datax.loc[["X"], "SleepTime"]=9.0
+  datax.loc[["X"], "Asthma"]=1
+  datax.loc[["X"], "KidneyDisease"]=0
+  datax.loc[["X"], "SkinCancer"]=1 -->
+
   <!--col-6 bölümleme-->
   <div class="container">
     <div class="row">
       <div class="col">
-        
-      
-<form method="POST">
+     
+<form style="position: absolute;"  method="POST" action="/heart">
     <br>
-    <div class="mb-3">
-        <label for="radius_mean">Yarıçap Ortalaması</label> </br>
-        <input type="number" step="0.0000001" id="radius_mean" name="radius_mean">
-</div>
-    <div class="mb-3">
-        <label for="texture_mean">Doku (gri tonlamalı değerlerin standart sapması)</label> </br>
-        <input type="number" step="0.0000001" id="texture_mean" name="texture_mean">
-</div>
-    <div class="mb-3">
-        <label for="radius_mean">Çevre Ortalaması</label> </br>
-        <input type="number" step="0.0000001" id="perimeter_mean" name="perimeter_mean">
-</div>
-    <div class="mb-3">
-        <label for="radius_mean">Alan Ortalaması</label> </br>
-        <input type="number" step="0.0000001" id="area_mean" name="area_mean">
-</div>
-    <div class="mb-3">
-        <label for="radius_mean">Pürüzsüzlük Ortalaması</label> </br>
-        <input type="number" step="0.0000001" id="smoothness_mean" name="smoothness_mean">
-</div>
-    <div class="mb-3">
-        <label for="radius_mean">Kompaktlık Ortalaması</label> </br>
-        <input type="number" step="0.0000001" id="compactness_mean" name="compactness_mean">
-</div>
-    <div class="mb-3">
-        <label for="radius_mean">İçbükeylik Ortalaması</label> </br>
-        <input type="number" step="0.0000001" id="concavity_mean" name="concavity_mean">
+    <div class="form-group">
+      <label style="font-family:cursive;" for="BMI">Vücut Kitle Endeksi ?</label> <br>
+    <select id="BMI" name="BMI">
+      <option value="10">10</option>
+      <option value="20">20</option>
+    </select>
+    <span class="focus"></span>
+  </div>
+
+    <div class="form-group">
+    <label style="font-family:cursive;" for="Smoking">Sigara Kullanıyor musunuz ?</label> <br>
+  <select id="Smoking" name="Smoking">
+    <option value="Evet">Evet</option>
+    <option value="Hayır">Hayır</option>
+  </select>
+  <span class="focus"></span>
 </div>
 
-    <div class="mb-3">
-        <label for="radius_mean">İçbükey Nokta Sayısı</label> </br>
-        <input type="number" step="0.0000001" id="concave points_mean" name="concave points_mean">
+<div class="form-group">
+  <label style="font-family:cursive;" for="AlcoholDrinking">Alkol  Kullanıyor musunuz ?</label> <br>
+<select id="Alcohol" name="AlcoholDrinking">
+  <option value="Evet">Evet</option>
+  <option value="Hayır">Hayır</option>
+</select>
+<span class="focus"></span>
 </div>
-    <div class="mb-3">
-        <label for="radius_mean">Simetri Ortalaması</label> </br>
-        <input type="number" step="0.0000001" id="symmetry_mean" name="symmetry_mean">
-</div>
-    <div class="mb-3">
-        <label for="radius_mean">Fraktal Boyut Ortalaması</label> </br>
-        <input type="number" step="0.0000001" id="fractal_dimension_mean" name="fractal_dimension_mean">
-</div>
-    
 
-    <input type="submit">
+<div class="form-group">
+  <label style="font-family:cursive;" for="Stroke">Daha Önce Felç Geçirdiniz mi ?</label> <br>
+<select id="Stroke" name="Stroke">
+  <option value="Evet">Evet</option>
+  <option value="Hayır">Hayır</option>
+</select>
+<span class="focus"></span>
+</div>
+<div class="form-group">
+  <label style="font-family:cursive;" for="PhysicalHealth">Bir ayda kaç gün Fiziksel olarak sağlığınız bozuldu ?</label> <br>
+<select id="PhysicalHealth" name="PhysicalHealth">
+  <option value="0">0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="9">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
 
-    <h1><b> Sonuç: </b> {{ value }} </h1>
+</select>
+<span class="focus"></span>
+</div>
+
+<div class="form-group">
+  <label style="font-family:cursive;" for="MentalHealth">Bir ayda kaç gün Mental sağlığınız yerinde değildi ?</label> <br>
+<select id="MentalHealth" name="MentalHealth">
+  <option value="0">0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="9">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+
+</select>
+<span class="focus"></span>
+</div>
+
+    <div class="form-group">
+  <label style="font-family:cursive;" for="DiffWalking">Yürüme ve merdiven çıkmada ciddi sıkıntılar yaşıyor musunuz?</label> <br>
+<select id="DiffWalking" name="DiffWalking">
+  <option value="Evet">Evet</option>
+  <option value="Hayır">Hayır</option>
+ 
+</select>
+<span class="focus"></span>
+</div>
+
+<div class="form-group">
+<label style="font-family:cursive;" for="Sex">Cinsiyetiniz Nedir ?</label> <br>
+<select id="Sex" name="Sex">
+<option value="Erkek">Erkek</option> 
+<option value="Kadın">Kadın</option>
+</select>
+<span class="focus"></span>
+</div>
+
+<div class="form-group">
+  <label style="font-family:cursive;" for="AgeCategory">Kaç Yaşındasınız?</label> <br>
+<select id="AgeCategory" name="AgeCategory">
+  <option value="18-24">18-24</option>
+  <option value="25-29">25-29</option>
+  <option value="30-34">30-34</option>
+  <option value="35-39">35-39</option>
+  <option value="40-44">40-44</option>
+  <option value="45-49">45-49</option>
+  <option value="50-54">50-54</option>
+  <option value="55-59">55-59</option>
+  <option value="60-64">60-64</option>
+  <option value="65-69">65-69</option>
+  <option value="70-74">70-74</option>
+  <option value="75-79">75-79</option>
+  <option value="80 veya daha yaşlı">80 veya daha yaşlı</option>
+</select>
+<span class="focus"></span>
+</div>
+
+<div class="form-group">
+  <label style="font-family:cursive;" for="Race">Kaç Yaşındasınız?</label> <br>
+<select id="Race" name="Race">
+  <option value="Beyaz">Beyaz</option>
+  <option value="Option 2">Siyah</option>
+  <option value="Asyalı">Asyalı</option>
+  <option value="American Indian/Alaskan Native">American Indian/Alaskan Native</option>
+  <option value="Other">Other</option>
+  <option value="Latin">Latin</option>
+</select>
+<span class="focus"></span>
+</div>
+
+<div class="form-group">
+  <label style="font-family:cursive;" for="Diabetic">Diyabet hastalığınız Var mı?</label> <br>
+<select id="Diabetic" name="Diabetic">
+  <option value="Evet">Evet</option>
+  <option value="Hayır">Hayır</option>
+</select>
+<span class="focus"></span>
+</div>
+
+<div class="form-group">
+  <label style="font-family:cursive;" for="PhysicalActivity">Fiziksel Aktivite yapıyor musunuz ?</label> <br>
+<select id="PhysicalActivity" name="PhysicalActivity">
+  <option value="Evet">Evet</option>
+  <option value="Hayır">Hayır</option>
+ 
+</select>
+<span class="focus"></span>
+</div>
+
+<div class="form-group">
+  <label style="font-family:cursive;" for="GenHealth">Gen Sağlığınız nasıl ?</label> <br>
+<select id="GenHealth" name="GenHealth">
+  <option value="Poor">Poor</option>
+  <option value="Fair">Fair</option>
+  <option value="Good">Good</option>
+  <option value="Very good">Very good</option>
+  <option value="Excellent">Excellent</option>
+</select>
+<span class="focus"></span>
+</div>
+
+
+<div class="form-group">
+  <label style="font-family:cursive;" for="SleepTime">Günlük kaç saat uyuyorsunuz ?</label> <br>
+<select id="SleepTime" name="SleepTime">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="9">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+</select>
+<span class="focus"></span>
+</div>
+
+<div class="form-group">
+  <label style="font-family:cursive;" for="Asthma">Astım hastalağınız var mı ?</label> <br>
+<select id="Asthma" name="Asthma">
+  <option value="Evet">Evet</option>
+  <option value="Hayır">Hayır</option>
+
+</select>
+<span class="focus"></span>
+</div>
+
+<div class="form-group">
+  <label style="font-family:cursive;" for="KidneyDisease">Böbrek hastalığınız var mı?</label> <br>
+<select id="KidneyDisease" name="KidneyDisease">
+  <option value="Evet">Evet</option>
+  <option value="Hayır">Hayır</option>
+</select>
+<span class="focus"></span>
+</div>
+
+<div class="form-group">
+  <label style="font-family:cursive;" for="SkinCancer">Daha önce cilt kasneri oldunuz mu ?</label> <br>
+<select id="SkinCancer" name="SkinCancer">
+  <option value="Evet">Evet</option>
+  <option value="Hayır">Hayır</option>
+</select>
+<span class="focus"></span>
+</div>
+
+
+<br>
+    <input style="background-color: rgba(24, 40, 53, 0.795); color: white; border-color: white; width: 100px;" type="submit" class="form-control"> <br>
+
+    <h1 style="font-family:cursive; font-size: 15px;"><b> SONUÇ: </b> {{ value }} </h1>
         <br> <br> 
   </form>
   {% for name in filenames %}
-    <img src="/static/{{ name }}", width="250">
+    <img style="margin-top: 750px;" src="/static/{{ name }}", width="100%">
    {% endfor %}
+  
+  
 </div>
 
 <!--col-6 bölümleme sag taraf-->
