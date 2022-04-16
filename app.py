@@ -117,7 +117,7 @@ def breastcancer():
     filenames=['']
     if predictedx==[1]:
         #result='KÖTÜ HUYLU KANSER HÜCRESİ-KANSER HÜCRESİ SAPTANMIŞTIR'
-        filenames=['sad_doctor.jpg']
+        filenames=['Bild3.png']
     elif predictedx==[0]:
         #result='İYİ HUYLU NODÜL-KANSER HÜCRESİ SAPTANMAMIŞTIR.'
         filenames=['HappyDoctorV2.jpg']
