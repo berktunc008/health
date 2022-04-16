@@ -62,7 +62,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <img src="/static/sayfaLogosu.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      <a class="navbar-brand" href="http://127.0.0.1:5000/home">Sağlıklı Tahmin</a>
+      <a class="navbar-brand" href="http://127.0.0.1:3600/home">Sağlıklı Tahmin</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -72,10 +72,10 @@
             <a class="nav-link active" aria-current="page" href="">Hakkımızda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/breast">Göğüs Kanseri Tahmini</a>
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:3600/breast">Göğüs Kanseri Tahmini</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/heart">Kalp Krizi Riski Tahmini</a>
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:3600/heart">Kalp Krizi Riski Tahmini</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="">Test3 Tahmini</a>
@@ -95,59 +95,60 @@
 <form style="position: absolute;"  method="POST">
     <br>
     <div class="form-group">
-        <label style="font-family:cursive;" for="radius_mean">Yarıçap Ortalaması</label> 
-        <input style="background-color: rgba(24, 40, 53, 0.795); color: white;" type="number" class="form-control" step="0.0000001" id="radius_mean" name="radius_mean">
+        <label style="font-family:cursive;" for="radius_mean">Yarıçap Ortalaması</label> <br>
+        <input style="background-color: rgba(24, 40, 53, 0.795); color: white; width: 360px;" type="number" class="form-control" step="0.0000001" id="radius_mean" name="radius_mean"> 
 </div>
     <div class="form-group">
-        <label style="font-family:cursive;" for="texture_mean">Doku (gri tonlamalı değerlerin standart sapması)</label> 
-        <input style="background-color: rgba(24, 40, 53, 0.795); color: white;" type="number" class="form-control"  step="0.0000001" id="texture_mean" name="texture_mean">
+        <label style="font-family:cursive;" for="texture_mean">Doku (gri tonlamalı değerlerin standart sapması)</label> <br>
+        <input style="background-color: rgba(24, 40, 53, 0.795); color: white; width: 360px;" type="number" class="form-control"  step="0.0000001" id="texture_mean" name="texture_mean">
 </div>
     <div class="form-group">
-        <label style="font-family:cursive;" for="radius_mean">Çevre Ortalaması</label> 
-        <input style="background-color: rgba(24, 40, 53, 0.795); color: white;" type="number" class="form-control" step="0.0000001" id="perimeter_mean" name="perimeter_mean">
+        <label style="font-family:cursive;" for="radius_mean">Çevre Ortalaması</label> <br>
+        <input style="background-color: rgba(24, 40, 53, 0.795); color: white; width: 360px;" type="number" class="form-control" step="0.0000001" id="perimeter_mean" name="perimeter_mean">
 </div>
     <div class="form-group">
-        <label style="font-family:cursive;" for="radius_mean">Alan Ortalaması</label> 
-        <input style="background-color: rgba(24, 40, 53, 0.795); color: white;" type="number" class="form-control" step="0.0000001" id="area_mean" name="area_mean">
+        <label style="font-family:cursive;" for="radius_mean">Alan Ortalaması</label> <br>
+        <input style="background-color: rgba(24, 40, 53, 0.795); color: white; width: 360px;" type="number" class="form-control" step="0.0000001" id="area_mean" name="area_mean">
 </div>
     <div class="form-group">
-        <label style="font-family:cursive;" for="radius_mean">Pürüzsüzlük Ortalaması</label> 
-        <input style="background-color: rgba(24, 40, 53, 0.795); color: white;" type="number" class="form-control" step="0.0000001" id="smoothness_mean" name="smoothness_mean">
+        <label style="font-family:cursive;" for="radius_mean">Pürüzsüzlük Ortalaması</label> <br>
+        <input style="background-color: rgba(24, 40, 53, 0.795); color: white; width: 360px;" type="number" class="form-control" step="0.0000001" id="smoothness_mean" name="smoothness_mean">
 </div>
     <div class="form-group">
-        <label style="font-family:cursive;" for="radius_mean">Kompaktlık Ortalaması</label> 
-        <input style="background-color: rgba(24, 40, 53, 0.795); color: white;" type="number" class="form-control" step="0.0000001" id="compactness_mean" name="compactness_mean">
+        <label style="font-family:cursive;" for="radius_mean">Kompaktlık Ortalaması</label> <br>
+        <input style="background-color: rgba(24, 40, 53, 0.795); color: white; width: 360px;" type="number" class="form-control" step="0.0000001" id="compactness_mean" name="compactness_mean">
 </div>
     <div class="form-group">
-        <label style="font-family:cursive;" for="radius_mean">İçbükeylik Ortalaması</label> 
-        <input style="background-color: rgba(24, 40, 53, 0.795); color: white;" type="number" class="form-control" step="0.0000001" id="concavity_mean" name="concavity_mean">
+        <label style="font-family:cursive;" for="radius_mean">İçbükeylik Ortalaması</label> <br>
+        <input style="background-color: rgba(24, 40, 53, 0.795); color: white; width: 360px;" type="number" class="form-control" step="0.0000001" id="concavity_mean" name="concavity_mean">
 </div>
 
     <div class="form-group">
-        <label style="font-family:cursive;" for="radius_mean">İçbükey Nokta Sayısı</label> 
-        <input style="background-color: rgba(24, 40, 53, 0.795); color: white;" type="number" class="form-control" step="0.0000001" id="concave points_mean" name="concave points_mean">
+        <label style="font-family:cursive;" for="radius_mean">İçbükey Nokta Sayısı</label> <br>
+        <input style="background-color: rgba(24, 40, 53, 0.795); color: white; width: 360px;" type="number" class="form-control" step="0.0000001" id="concave points_mean" name="concave points_mean">
 </div>
     <div class="form-group">
-        <label style="font-family:cursive;" for="radius_mean">Simetri Ortalaması</label> 
-        <input style="background-color: rgba(24, 40, 53, 0.795); color: white;" type="number" class="form-control" step="0.0000001" id="symmetry_mean" name="symmetry_mean">
+        <label style="font-family:cursive;" for="radius_mean">Simetri Ortalaması</label> <br>
+        <input style="background-color: rgba(24, 40, 53, 0.795); color: white; width: 360px;" type="number" class="form-control" step="0.0000001" id="symmetry_mean" name="symmetry_mean">
 </div>
     <div class="form-group">
-        <label style="font-family:cursive;" for="radius_mean">Fraktal Boyut Ortalaması</label> 
-        <input style="background-color: rgba(24, 40, 53, 0.795); color: white;" type="number" class="form-control" step="0.0000001" id="fractal_dimension_mean" name="fractal_dimension_mean">
+        <label style="font-family:cursive;" for="radius_mean">Fraktal Boyut Ortalaması</label> <br>
+        <input style="background-color: rgba(24, 40, 53, 0.795); color: white; width: 360px;" type="number" class="form-control" step="0.0000001" id="fractal_dimension_mean" name="fractal_dimension_mean">
 </div>
     
 <br>
-    <input style="background-color: rgba(24, 40, 53, 0.795); color: white; border-color: white;" type="submit">
+    <input style="background-color: rgba(24, 40, 53, 0.795); color: white; border-color: white; width: 100px;" type="submit" class="form-control"> <br>
 
-    <h1 style="font-family:cursive;"><b> Sonuç: </b> {{ value }} </h1>
+    <h1 style="font-family:cursive; font-size: 15px;"><b> Sonuç: </b> {{ value }} </h1>
         <br> <br> 
   </form>
   {% for name in filenames %}
-    <img src="/static/{{ name }}", width="250">
+    <img style="margin-top: 150%;" src="/static/{{ name }}", width="250">
    {% endfor %}
-
+  
   
 </div>
+
 
  
 <!--col-6 bölümleme sag taraf-->
