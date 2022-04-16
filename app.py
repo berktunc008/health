@@ -43,6 +43,7 @@ def home():
 def breast():
     return render_template("breastcancer.html")
 
+#Template heart oluşturulunca heart.html olarak değişilecek.
 @app.route("/heart")
 def heart():
     return render_template("heartattack.html")
@@ -115,11 +116,11 @@ def breastcancer():
     result=''
     filenames=['']
     if predictedx==[1]:
-        result='KÖTÜ HUYLU KANSER HÜCRESİ-KANSER HÜCRESİ SAPTANMIŞTIR'
+        #result='KÖTÜ HUYLU KANSER HÜCRESİ-KANSER HÜCRESİ SAPTANMIŞTIR'
         filenames=['sad_doctor.jpg']
     elif predictedx==[0]:
-        result='İYİ HUYLU NODÜL-KANSER HÜCRESİ SAPTANMAMIŞTIR.'
-        filenames=['happy_doctor.jpg']
+        #result='İYİ HUYLU NODÜL-KANSER HÜCRESİ SAPTANMAMIŞTIR.'
+        filenames=['HappyDoctorV2.jpg']
 
     #ths=open('C:\\Users\\Berk\\Desktop\\health\\logs.txt',"w")
     #ths.write(str(datax))

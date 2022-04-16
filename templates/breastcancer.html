@@ -62,7 +62,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <img src="/static/sayfaLogosu.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      <a class="navbar-brand" href="http://127.0.0.1:3600/home">Sağlıklı Tahmin</a>
+      <a class="navbar-brand" href="http://127.0.0.1:5000/home">Sağlıklı Tahmin</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -72,10 +72,10 @@
             <a class="nav-link active" aria-current="page" href="">Hakkımızda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:3600/breast">Göğüs Kanseri Tahmini</a>
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/breast">Göğüs Kanseri Tahmini</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:3600/heart">Kalp Krizi Riski Tahmini</a>
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/heart">Kalp Krizi Riski Tahmini</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="">Test3 Tahmini</a>
@@ -139,11 +139,11 @@
 <br>
     <input style="background-color: rgba(24, 40, 53, 0.795); color: white; border-color: white; width: 100px;" type="submit" class="form-control"> <br>
 
-    <h1 style="font-family:cursive; font-size: 15px;"><b> Sonuç: </b> {{ value }} </h1>
+    <h1 style="font-family:cursive; font-size: 15px;"><b> SONUÇ: </b> {{ value }} </h1>
         <br> <br> 
   </form>
   {% for name in filenames %}
-    <img style="margin-top: 150%;" src="/static/{{ name }}", width="250">
+    <img style="margin-top: 750px;" src="/static/{{ name }}", width="100%">
    {% endfor %}
   
   
