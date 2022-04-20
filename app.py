@@ -1,4 +1,6 @@
 from fileinput import filename
+from imp import load_module
+from multiprocessing.sharedctypes import Value
 from unittest import result
 from flask import Flask, request, render_template, url_for,request
 import pickle,time,os,io,re
@@ -7,8 +9,8 @@ from sys import path
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-import matplotlib.pyplot as plt
 import matplotlib.colors
+from matplotlib.pyplot import imshow
 from pandas.plotting import scatter_matrix
 from scipy.stats import gaussian_kde
 from pandas.plotting import parallel_coordinates
@@ -27,181 +29,16 @@ from sklearn.preprocessing import LabelBinarizer
 from string import punctuation, digits
 from sklearn.svm import SVC
 from pickle import load
-
-
-# def BMI_edit(gelen):
-#     global BMI_last
-#     BMI_value=gelen
-#     if(BMI_value>=0):
-#         BMI_last=BMI_value
-
-
-# def Smoking_edit(gelen):
-#     global Smoking_last
-#     Smoking_value=gelen
-
-#     if(Smoking_value=="Evet"):
-#         Smoking_last=1
-#     elif(Smoking_value=="Hayır"):
-#         Smoking_last=0
-
-
-# def AlcoholDrinking_edit(gelen):
-#     global AlcoholDrinking_last
-#     AlcoholDrinking_value=gelen
-
-#     if (AlcoholDrinking_value=="Evet"):
-#         AlcoholDrinking_last=1
-#     elif(AlcoholDrinking_value=="Hayır"):
-#         AlcoholDrinking_last=0
-
-# def Stroke_edit(gelen):
-#     global Stroke_last
-#     Stroke_value=gelen
-
-#     if(Stroke_value=="Evet"):
-#         Stroke_value=1
-#     elif(Stroke_value=="Hayır"):
-#         Stroke_value=0
-
-# def PhysicalHealth_edit(gelen):
-#     global PhysicalHealth_last
-#     PhysicalHealth_value=gelen
-#     if (PhysicalHealth_value>=0):
-#         PhysicalHealth_last=PhysicalHealth_value
-
-# def MentalHealth_edit(gelen):
-#     global MentalHealth_last
-#     MentalHealth_value=gelen
-#     if(MentalHealth_value>=0):
-#         MentalHealth_last=MentalHealth_value
-
-
-# def DiffWalking_edit(gelen):
-#     global DiffWalking_last
-#     DiffWalking_value=gelen
-#     if(DiffWalking_value=="Evet"):
-#         DiffWalking_last=1
-#     elif(DiffWalking_value=="Hayır"):
-#         DiffWalking_last=0
-
-# def Sex_edit(gelen):
-#     global Sex_last
-#     Sex_value=gelen
-#     if(Sex_value=="Erkek"):
-#         Sex_last=0
-#     elif(Sex_value=="Kadın"):
-#         Sex_last=1
-# def AgeCategory_edit(gelen):
-#     global AgeCategory_last
-#     AgeCategory_value=gelen
-#     if(AgeCategory=="18-24"):
-#         AgeCategory=1
-#     elif(AgeCategory=="25-29"):
-#         AgeCategory=2
-#     elif(AgeCategory=="30-34"):
-#         AgeCategory=3
-#     elif(AgeCategory=="35-39"):
-#         AgeCategory=4
-#     elif(AgeCategory=="40-44"):
-#         AgeCategory=5
-#     elif(AgeCategory=="45-49"):
-#         AgeCategory=6
-#     elif(AgeCategory=="50-54"):
-#         AgeCategory=7
-#     elif(AgeCategory=="55-59"):
-#         AgeCategory=8
-#     elif(AgeCategory=="60-64"):
-#         AgeCategory=9
-#     elif(AgeCategory=="65-69"):
-#         AgeCategory=10
-#     elif(AgeCategory=="70-74"):
-#         AgeCategory=11  
-#     elif(AgeCategory=="75-79"):
-#         AgeCategory=12
-#     elif(AgeCategory=="80 veya daha yaşlı"):
-#         AgeCategory=13
-
-# def Race_edit(gelen):
-#     global Race_last
-#     Race_value=gelen
-#     if(Race_value=="Beyaz"):
-#         Race_last=1
-#     if(Race_value=="Siyah"):
-#         Race_last=2
-#     if(Race_value=="Asyalı"):
-#         Race_last=3
-#     if(Race_value=="American Indian/Alaskan Native"):
-#         Race_last=4
-#     if(Race_value=="Other"):
-#         Race_last=5
-#     if(Race_value=="Latin"):
-#         Race_last=6
-
-
-# def Diabetic_edit(gelen):
-#     global Diabetic_last
-#     Diabetic_value=gelen
-#     if(Diabetic_value=="Evet"):
-#         Diabetic_last=1
-#     elif(Diabetic_value=="Hayır"):
-#         Diabetic_last=0
-
-# def PhysicalActivity_edit(gelen):
-#     global PhysicalActivity_last
-#     PhysicalActivity_value=gelen
-#     if(PhysicalActivity_value=="Evet"):
-#         PhysicalActivity_last=0
-#     elif(PhysicalActivity_value=="Hayır"):
-#         PhysicalActivity_last=1
-
-# def GenHealth_edit(gelen):
-#     global GenHealth_last
-#     GenHealth_value=gelen
-#     if(GenHealth_value=="Poor"):
-#         GenHealth_last=0
-#     elif(GenHealth_value=="Fair"):
-#         GenHealth_last=1
-#     elif(GenHealth_value=="Good"):
-#         GenHealth_last=2
-#     elif(GenHealth_value=="Very Good"):
-#         GenHealth_last=3
-#     elif(GenHealth_value=="Excellent"):
-#         GenHealth_last=4
-
-# def SleepTime_edit(gelen):
-#     global SleepTime_last
-#     SleepTime_value=gelen
-#     if(SleepTime_value>=0):
-#         SleepTime_last=SleepTime_value
-
-# def Asthma_edit(gelen):
-#     global Asthma_last
-#     Asthma_value=gelen
-#     if(Asthma_value=="Evet"):
-#         Asthma_last=1
-#     elif(Asthma_value=="Hayır"):
-#         Asthma_last=0
-
-# def KidneyDisease_edit(gelen):
-#     global KidneyDisease_last
-#     KidneyDisease_value=gelen
-#     if(KidneyDisease_value=="Evet"):
-#         KidneyDisease_last=1
-#     elif(KidneyDisease_value=="Hayır"):
-#         KidneyDisease_last=0
-
-
-# def SkinCancer_edit(gelen):
-#     global SkinCancer_last
-#     SkinCancer_value=gelen
-#     if(SkinCancer_value=="Evet"):
-#         SkinCancer_last=1
-#     elif(SkinCancer_value=="Hayır"):
-#         SkinCancer_last=0
-
+from keras.models import load_model
+from PIL import Image
+from flask import Flask, flash, request, redirect, url_for, render_template
+import urllib.request
+import os
+from werkzeug.utils import secure_filename
 
 app=Flask(__name__)
+
+
 
 @app.route("/")
 def index():
@@ -219,6 +56,10 @@ def breast():
 @app.route("/heart")
 def heart():
     return render_template("heartattack.html")
+
+@app.route("/brain")
+def brain():
+    return render_template("braintumor.html")
 
 @app.route('/breast', methods=['POST','GET'])
 def breastcancer():
@@ -490,6 +331,37 @@ def heart_disease():
     #ths=open('C:\\Users\\Berk\\Desktop\\health\\logs.txt',"w")
     #ths.write(str(datax))
     return render_template('heartattack.html',value=result, filenames=filenames)
+
+
+
+
+
+  ####path VERİNCE ÇALIŞIYOR...
+@app.route('/brain', methods=['POST','GET'])
+def brain_tumor():
+    model_brain=load_model("models/model_brain/brain_model.h5")
+    img=Image.open(request.files["brain"])
+    new=np.array(img.resize((128,128)))
+    new=new.reshape(1,128,128,3)
+    newres=model_brain.predict_on_batch(new)
+    newclassification=np.where(newres==np.max(newres))[1][0]
+    ax=(str(newres[0][newclassification]*100) + '% Confidence This Is ')
+    result=''
+    if newclassification==0:
+        result='TÜMÖR'
+    elif newclassification==1:
+        result='TÜMÖR DEĞİL'
+
+
+
+
+    return render_template('braintumor.html',value=result)
+
+
+
+
+
+
 
 
 if __name__=="__main__":
