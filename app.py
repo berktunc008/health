@@ -61,6 +61,10 @@ def heart():
 def brain():
     return render_template("braintumor.html")
 
+@app.route("/hakkimizda")
+def hakkimizda():
+    return render_template("hakkimizda.html")    
+
 @app.route('/breast', methods=['POST','GET'])
 def breastcancer():
     #Model load edildi.

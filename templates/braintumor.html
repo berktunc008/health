@@ -46,15 +46,16 @@
       <div class="col">
      
 <form style="position: absolute;"  method="POST" enctype="multipart/form-data">
-    <br>
+    <br> <hr>
     <div class="form-group">
-        <label style="font-family:cursive;" for="brain">Beyin Tümörü MR görüntüsünü yükleyiniz.</label> <br>
+      <h1>Beyin Tümörü Teşhisi Formu</h1> <hr>
+        <label style="font-family:cursive;" for="brain">Beyin Tümörü MR görüntüsünü yükleyiniz.</label> <br> <br> 
         <input type="file"   id="brain" name="brain"> 
 </div>
        
 <br>
     <input style="background-color: rgba(24, 40, 53, 0.795); color: white; border-color: white; width: 100px;" type="submit" class="form-control"> <br>
-
+<hr>
     <h1 style="font-family:cursive; font-size: 15px;"><b> SONUÇ: </b> {{ value }} </h1>
         <br> <br> 
   </form>
@@ -73,53 +74,40 @@
 <div class="col">
     <br>
  
-    <h2>Göğüs Kanseri Nedir?</h2>
-    <p class="fs-6 mb-4class">Göğüs kanseri, göğüs dokusunu oluşturan hücre gruplarından birinin değişime 
-      uğraması ve kontrolsüz olarak çoğalması nedeniyle oluşan tümör sonucu ortaya çıkan bir hastalıktır. <br> <br> Kanserli doku, önce yakın çevresine sonra, 
-      memeye yakın lenf bezlerine yayılıyor. Zamanında tanı konulup tedavi edilmeyen hastalarda kanser diğer organlara yayılarak tedavisi olanaksız evreye geçiyor.
-      <br>
-     Meme kanserlerinin son yıllarda görülme sıklığı oldukça arttı. Küresel ölçekteki istatistiklere göre meme kanserinin görülme sıklığı 100000’de 40-50 civarlarında hesaplanmakta.
+    <h2>Beyin Tümörü Nedir?</h2>
+    <p class="fs-6 mb-4class">Beyin hücrelerinin yenilenmesi sırasında kopyalamada 
+      meydana gelen anormal hücrelerin büyümesi ve bir kitle haline gelmesi beyin 
+      tümörü olarak adlandırılmaktadır. Bu kitlelerin tam olarak nedeni ise bilinememektedir. Yeni doğanlardan ileri yaştaki kişilere kadar her yaşta görülebilen beyin tümörü
+       kafatası içinde basınca neden olmaktadır. Bu baskı ve basınç beynin görevini tam olarak yerine getirememesini 
+       sağlamakta ve hastalar çeşitli belirtiler göstermektedir. Özellikle, hastaların 
+       yaklaşık %60’ında görülen şiddetli ve uzun süre devam eden baş ağrısı önemli belirtilerden biridir.
+      <br> <hr>
+      Genel olarak iyi huylu ve kötü huylu olarak ayrılan beyin tümörlerinde erken teşhis büyük önem taşımaktadır. Her beyin tümörü öldürücü etkiye sahip olmadığı için doğru müdahale ve erken teşhis tümörlerin iyileştirilmesinde çok önemlidir. Erken teşhis ve tıbbın gelişmesi ile ortaya çıkan yeni tedavi yöntemleri sayesinde tümörler kontrol altına alınabilmektedir.
       <br><br>
-      Bunun yanı sıra, ABD verilerine göre bir kadının hayatı boyunca meme kanserine yakalanma olasılığı 1/8 olarak ifade ediliyor. Her ne kadar ilerleyen yaşlarla beraber görülme sıklığı artsa dahi, meme kanserinden korunmanın bir takım yolları bulunuyor:
-     <br>
-      <ul class="fs-6 mb-4class=">
-        <li>Sigara ve alkol gibi kanser yapıcı maddelerden uzak durmak</li>
-        <li>Sağlıklı beslenmek ve düzenli spor yapmak</li>
-        <li>İdeal kiloyu korumaya özen göstermek</li>
-        <li>Bebek sahibi olan anneler için ilk 6 ay emzirmek</li>
-        <li>Çok geç yaşta anne olmamak</li>
-        <li>Hormon ilaçlarının kullanımına dikkat etmek</li>
-      </ul>
-      
+       
+     
       <!--açılabilir sekme (1)-->
 
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button style="background-color: rgba(94, 189, 192, 0.507); color: rgb(0, 0, 0);" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Meme Kanseri Risk Faktörleri
+              Beyin Tümörü Risk Faktörleri
             </button>
           </h2>
 
           <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body bg-dark">
               <p class="fs-6 mb-4">
+                Beyin tümörüne neden olan faktörler günümüzde hala araştırılsa da bazı faktörlerin tümör oluşumunda etkisi olduğu bilinmektedir. Bu faktörler: </p>
+                
                 <ul class="fs-6 mb-4">
-                <li>Kadın olmak</li>
-                <li>50-70 yaş arasında ve menopoz sonrası dönemde olmak</li>
-                <li>Ailesinde (anne veya baba tarafında) meme kanserine yakalanmış akrabaları olmak</li>
-                <li>Daha önce meme kanserine yakalanmış olmak</li>
-                <li>Adet başlama yaşının erken, menopoz yaşının geç olması</li>
-                <li>Hiç doğum yapmamış olmak</li>
-                <li>İlk doğumunu 30 yaşından sonra yapmak</li>
-                <li>Doğum yapmış fakat bebeğini emzirmemiş olmak</li>
-                <li>Uzun süreli hormon tedavisi almak</li>
-                <li>Modern şehir yaşamı ortamında yaşamak,</li>
-                <li>Sigara ve tütün ürünleri kullanmak,</li>
-                <li>Şişmanlık; özellikle menopoz sonrası fazla kilo almak ve doymuş yağlardan zengin gıdaları fazla miktarda tüketmek,</li>
-                <li>Fiziksel aktivite azlığı</li>
-              </ul> </p>
-            </div>
+                  <li>Genetik faktörler</li>
+                  <li>Radyasyon ve çeşitli kanserojen kimyasallara maruz kalma</li>
+                  <li>HIV enfeksiyonu başta olmak üzere çeşitli virüsler</li>
+                  <li>Sigara kullanımı</li>
+                  <li>Cep telefonu kullanımı (Henüz kanıtlanmasa da şüphe duyulan nedenlerden biridir.)</li>
+              </div>
           </div>
         </div>
       
@@ -137,23 +125,22 @@
               <div class="accordion-body bg-dark">
                 
                   <p class="fs-6 mb-4">
-                    Meme içinde kanserleşen bir hücrenin, bir tümör oluşturması ve bir uzmanın muayene sırasında anlamasına ya da radyolojik incelemede belli olmasına kadar hayli uzun zaman geçmesi gerekiyor. Kadınlar genellikle en az 1 cm. büyüklüğüne ulaşmış bir kitleyi, elle kontrol yöntemi sayesinde fark edebiliyorlar.
-                    <br><br>
-                      Günümüzde meme kanseri belirtilerininin çoğu kişinin kendisi tarafından bulunuyor. Kanserli kitleler nispeten sert, düzensiz kenarlı, yüzeyi pürtüklü görünüyor ve meme dokusu içinde rahatça oynatılamıyor.
-                      Meme Kanserinin belirtileri ise;
-                    <br>
+                    Beyin tümörü belirtileri bazı faktörlere bağlı olarak hastadan hastaya değişiklik göstermektedir. 
+                    Tümörün yeri, büyüklüğü, büyüme hızı ve tipi belirtilerin değişmesine neden olmaktadır. 
+                    Semptomların ortaya çıkması ise tümörün sinir uçlarına baskı yapması ve çok büyük tümörlerin
+                     beyin içinde sıvı birikmesine neden olması gibi sebeplere dayanmaktadır. <br> Beyin, vücudun tüm hareketlerini yöneten organ olduğu için farklı bölgelerde belirti görülebilmektedir. Çok şiddetli baş ağrısı beyin tümörü ile karakteristik olsa da hastalarda genel olarak görülen belirtiler şu şekildedir:
         
                   <ul class="fs-6 mb-4class=">
-                    <li>Memede elle hissedilen bir sertlik veya kitle</li>
-                    <li>İki meme arasında son dönemde ortaya çıkan asimetri</li>
-                    <li>Meme başında veya meme cildinde içe doğru çekinti</li>
-                    <li>Memede kızarıklık, yara, egzama, kabuklanma, çatlama</li>
-                    <li>Meme cildinde portakal kabuğuna benzer görünüm</li>
-                    <li>Meme başında şekil veya yön değişikliği</li>
-                    <li>Memede olağan dışı şişlik veya boyut artışı</li>
-                    <li>Adet dönemlerinde memede rastlanabilenden farklı karakterde ağrı</li>
-                    <li>Koltuk altında sertlik, şişlik veya kitle</li>
-                    <li>Meme başından akıntı; özellikle pembe, kırmızı renkte</li>
+                    <li>Şiddetli baş ağrısı</li>
+                    <li>Epilepsi nöbetlerine benzeyen bayılma atakları</li>
+                    <li>Mide bulantısı ve kusma</li>
+                    <li>Denge ve yürüme bozuklukları</li>
+                    <li>Kol ve bacaklarda uyuşukluk ve hissizlik</li>
+                    <li>Bulanık ve çift görme gibi görme problemleri</li>
+                    <li>Konuşmada yaşanan bozukluklar</li>
+                    <li>Bilinç bozuklukları</li>
+                    <li>Kişilik değişiklikleri</li>
+                    <li>Hareket ve mimiklerde yavaşlama</li>
                   </ul>
                  </p>
               </div>
