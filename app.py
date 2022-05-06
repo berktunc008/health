@@ -349,12 +349,12 @@ def brain_tumor():
     new=new.reshape(1,128,128,3)
     newres=model_brain.predict_on_batch(new)
     newclassification=np.where(newres==np.max(newres))[1][0]
-    ax=(str(newres[0][newclassification]*100) + '% Confidence This Is ')
+    ax=(str(newres[0][newclassification]*100) + '% Olasılıkla ')
     result=''
     if newclassification==0:
-        result='TÜMÖR'
+        result=ax+'TÜMÖR'
     elif newclassification==1:
-        result='TÜMÖR DEĞİL'
+        result=ax+'TÜMÖR DEĞİL'
 
 
 
