@@ -3,7 +3,10 @@ from imp import load_module
 from multiprocessing.sharedctypes import Value
 from unittest import result
 from flask import Flask, request, render_template, url_for,request
-import pickle,time,os,io,re
+import pickle
+import time
+import io
+import re
 import pandas as pd
 from sys import path
 import numpy as np
